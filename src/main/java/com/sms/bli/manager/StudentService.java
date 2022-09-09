@@ -5,7 +5,9 @@ import com.sms.bli.request.StudentRequest;
 
 public interface StudentService {
 
-    public ServerResponse createStudent(StudentRequest studentRequest);
+     ServerResponse createStudent(StudentRequest studentRequest);
 
-    public ServerResponse getAllStudent();
+     ServerResponse getAllStudent();
+
+     ServerResponse changeStatus(Long id);
 }

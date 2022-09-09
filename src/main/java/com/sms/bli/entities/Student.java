@@ -47,4 +47,6 @@ public class Student {
     private String subjects;
     @Column(name="COURSE_ID")
     private String courseId;
+    @Column(name="ACTIVE")
+    private Character active;
 }

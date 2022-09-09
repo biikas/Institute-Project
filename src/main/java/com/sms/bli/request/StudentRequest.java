@@ -1,9 +1,7 @@
 package com.sms.bli.request;
 
 import lombok.Data;
-import lombok.Getter;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**

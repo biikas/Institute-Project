@@ -21,6 +21,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
+
     @Override
     public ServerResponse createStudent(StudentRequest studentRequest) {
         ServerResponse serverResponse = new ServerResponse();
@@ -32,33 +33,39 @@ public class StudentServiceImpl implements StudentService {
             serverResponse.setMessage("Student Created successfully");
             serverResponse.setObj(student);
             return serverResponse;
-        }catch (Exception e){
+        } catch (Exception e) {
             serverResponse.setSuccess(false);
             serverResponse.setCode("1");
             serverResponse.setMessage("oops some thing went wrong");
-            return  serverResponse;
+            return serverResponse;
         }
     }
 
     @Override
     public ServerResponse getAllStudent() {
         ServerResponse serverResponse = new ServerResponse();
-        try{
+        try {
             List<StudentResponse> studentResponses = studentRepository.findAll()
                     .stream()
-                    .map(student -> StudentMapper.convertToGetStudentList(student))
-                    .collect(Collectors.toList());
+                    .filter(f -> f.getActive() == 'Y')
+                    .map(student -> StudentMapper.convertToGetStudentList(student)).collect(Collectors.toList());
 
             serverResponse.setSuccess(true);
             serverResponse.setMessage("Student List obtained successfully");
             serverResponse.setCode("0");
             serverResponse.setObj(studentResponses);
             return serverResponse;
-        }catch (Exception e){
+        } catch (Exception e) {
             serverResponse.setMessage("oops some thing went wrong");
             serverResponse.setCode("1");
             serverResponse.setSuccess(false);
             return serverResponse;
         }
+    }
+
+    @Override
+    public ServerResponse changeStatus(Long id) {
+
+        return null;
     }
 }

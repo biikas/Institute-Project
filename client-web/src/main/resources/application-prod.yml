@@ -1,0 +1,48 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /callgram
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    database: mysql
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        enable_lazy_load_no_trans: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  jackson:
+    default-property-inclusion: non_null
+
+  datasource:
+    url: jdbc:mysql://10.13.194.238:3307/CG?zeroDateTimeBehavior=Converttonull&useUnicode=yes&characterEncoding=UTF-8
+    username: root
+    password: f1s0ft@123
+    tomcat:
+      initial-size: 15
+      max-wait: 20000
+      max-active: 50
+      max-idle: 15
+      min-idle: 8
+      default-auto-commit: true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#EMAIL PROPERTIES
+#EMAIL SCHEDULER RUNS EVERY MINUTE
+mail:
+  host: smtp.gmail.com
+  username: etest4367@gmail.com
+  password: password123*
+  port: 465
+  protocol: smtp
+  schedulerTime: 60000
+  enabled : N
+
+
+origin:
+  admin: '*'

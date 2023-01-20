@@ -1,0 +1,17 @@
+package com.nikosera.common.dto;
+
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
+import java.io.Serializable;
+
+/**
+ * @author Narayan Joshi
+ * <narenzoshi@gmail.com>
+ */
+public class ModelBase implements Serializable {
+
+    @Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this);
+    }
+}

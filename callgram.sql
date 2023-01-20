@@ -1,0 +1,188 @@
+/*
+SQLyog Ultimate v13.1.1 (64 bit)
+MySQL - 8.0.29 : Database - CALLGRAM
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`CALLGRAM` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+USE `CALLGRAM`;
+
+/*Table structure for table `APPLICATION_USER` */
+
+DROP TABLE IF EXISTS `APPLICATION_USER`;
+
+CREATE TABLE `APPLICATION_USER` (
+  `ID` bigint NOT NULL AUTO_INCREMENT,
+  `CREATED_DATE` datetime NOT NULL,
+  `LAST_MODIFIED_DATE` datetime NOT NULL,
+  `ACTIVE` char(1) COLLATE utf8mb4_general_ci NOT NULL,
+  `BLOCKED_DATE` datetime DEFAULT NULL,
+  `CONTACT_NO` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `EMAIL_ADDRESS` varchar(200) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `HAS_ENFORCED_MFA` char(1) COLLATE utf8mb4_general_ci NOT NULL,
+  `IMAGE_URL` varchar(500) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `IS_MFA_ENABLE` char(1) COLLATE utf8mb4_general_ci NOT NULL,
+  `LAST_LOGIN_TIME` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `LAST_PASSWORD_CHANGE` datetime DEFAULT NULL,
+  `NAME` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `PASSWORD` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `SECRET` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `USERNAME` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `WRONG_ATTEMPT_COUNT` int DEFAULT NULL,
+  `CREATED_BY` bigint NOT NULL,
+  `LAST_MODIFIED_BY` bigint DEFAULT NULL,
+  `USER_GROUP_ID` bigint NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `FKn2e7mg3v5h3d5a7l7d9mwsa97` (`CREATED_BY`),
+  KEY `FKt2130r5y0bsoj3a1dx5e28f3p` (`LAST_MODIFIED_BY`),
+  KEY `FKcqa369klgk0flux4bso367wqd` (`USER_GROUP_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `APPLICATION_USER` */
+
+insert  into `APPLICATION_USER`(`ID`,`CREATED_DATE`,`LAST_MODIFIED_DATE`,`ACTIVE`,`BLOCKED_DATE`,`CONTACT_NO`,`EMAIL_ADDRESS`,`HAS_ENFORCED_MFA`,`IMAGE_URL`,`IS_MFA_ENABLE`,`LAST_LOGIN_TIME`,`LAST_PASSWORD_CHANGE`,`NAME`,`PASSWORD`,`SECRET`,`USERNAME`,`WRONG_ATTEMPT_COUNT`,`CREATED_BY`,`LAST_MODIFIED_BY`,`USER_GROUP_ID`) values 
+(1,'2022-07-15 20:38:59','2022-07-15 20:41:06','Y',NULL,'9860113030','narenzoshi@gmail.com','N',NULL,'N',NULL,'2022-07-15 20:39:51','Narayan Joshi','$2a$12$CX/xLde3DFfp63B9R2wI8OG9.2J5cerPgfavH9XgUjAE3QuGH9Wl6',NULL,'narayan',0,1,1,1),
+(2,'2022-07-15 20:42:24','2022-07-15 20:42:24','Y',NULL,'9801879240','test@test.com','Y',NULL,'N',NULL,NULL,'Test','$2a$10$UieTKtkGuiU0.bHYoZx82.d6AJlzyHUXCqx6YuFmQJCEi5UPuvJr.',NULL,'test',0,1,1,2);
+
+/*Table structure for table `NOTIFICATION` */
+
+DROP TABLE IF EXISTS `NOTIFICATION`;
+
+CREATE TABLE `NOTIFICATION` (
+  `ID` bigint NOT NULL AUTO_INCREMENT,
+  `IS_PUBLISHED` char(1) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `NOTIFIED_TO` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `RECORDED_DATA` datetime DEFAULT NULL,
+  `SENT_DATE` datetime DEFAULT NULL,
+  `STATUS` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `SUBJECT` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `TEMPLATE_NAME` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `TYPE` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `NOTIFICATION` */
+
+/*Table structure for table `NOTIFICATION_PARAMETER` */
+
+DROP TABLE IF EXISTS `NOTIFICATION_PARAMETER`;
+
+CREATE TABLE `NOTIFICATION_PARAMETER` (
+  `ID` bigint NOT NULL AUTO_INCREMENT,
+  `PARAM_KEY` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `PARAM_VALUE` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `NOTIFICATION_ID` bigint NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `FKhg1u5ptnw4041dssdh25y4x9q` (`NOTIFICATION_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `NOTIFICATION_PARAMETER` */
+
+/*Table structure for table `USER_GROUP` */
+
+DROP TABLE IF EXISTS `USER_GROUP`;
+
+CREATE TABLE `USER_GROUP` (
+  `ID` bigint NOT NULL AUTO_INCREMENT,
+  `CREATED_DATE` datetime NOT NULL,
+  `LAST_MODIFIED_DATE` datetime NOT NULL,
+  `ACTIVE` char(1) COLLATE utf8mb4_general_ci NOT NULL,
+  `DESCRIPTION` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `NAME` varchar(80) COLLATE utf8mb4_general_ci NOT NULL,
+  `CREATED_BY` bigint NOT NULL,
+  `LAST_MODIFIED_BY` bigint DEFAULT NULL,
+  `PARENT_ID` bigint DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `FK53ojeo7mnggd2h4178y2v1hqg` (`CREATED_BY`),
+  KEY `FKmv06e02pxrroau06pus4nxgs8` (`LAST_MODIFIED_BY`),
+  KEY `FKlm85l2h2t5h1iti9gqaqcktqw` (`PARENT_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `USER_GROUP` */
+
+insert  into `USER_GROUP`(`ID`,`CREATED_DATE`,`LAST_MODIFIED_DATE`,`ACTIVE`,`DESCRIPTION`,`NAME`,`CREATED_BY`,`LAST_MODIFIED_BY`,`PARENT_ID`) values 
+(1,'2021-01-05 13:26:47','2021-01-05 13:39:57','Y','Super user of this product','Super Admin',1,1,NULL),
+(2,'2022-07-15 20:42:00','2022-07-15 20:42:00','Y','View only','VIewer',1,1,1);
+
+/*Table structure for table `USER_GROUP_PERMISSION` */
+
+DROP TABLE IF EXISTS `USER_GROUP_PERMISSION`;
+
+CREATE TABLE `USER_GROUP_PERMISSION` (
+  `ID` bigint NOT NULL AUTO_INCREMENT,
+  `CREATED_DATE` datetime NOT NULL,
+  `LAST_MODIFIED_DATE` datetime NOT NULL,
+  `ENABLE` char(1) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `CREATED_BY` bigint NOT NULL,
+  `LAST_MODIFIED_BY` bigint DEFAULT NULL,
+  `USER_GROUP_ID` bigint NOT NULL,
+  `USER_MENU_ID` bigint NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `FKgp2ly52yoyss9tg32yvf9b5r4` (`CREATED_BY`),
+  KEY `FK9hymg1qgyxuf3mmugaxgdhd7e` (`LAST_MODIFIED_BY`),
+  KEY `FKekc5t7u2f18lnetu29etgk6e9` (`USER_GROUP_ID`),
+  KEY `FKe5akoon3xm9byxvi4h7qpi61b` (`USER_MENU_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `USER_GROUP_PERMISSION` */
+
+insert  into `USER_GROUP_PERMISSION`(`ID`,`CREATED_DATE`,`LAST_MODIFIED_DATE`,`ENABLE`,`CREATED_BY`,`LAST_MODIFIED_BY`,`USER_GROUP_ID`,`USER_MENU_ID`) values 
+(1,'2021-01-29 21:54:45','2021-01-29 21:54:45','Y',1,1,1,1),
+(2,'2021-01-29 21:54:45','2021-01-29 21:54:45','Y',1,1,1,2),
+(3,'2021-01-29 21:54:45','2021-01-29 21:54:45','Y',1,1,1,3),
+(4,'2021-01-29 21:54:45','2021-01-29 21:54:45','Y',1,1,1,4),
+(5,'2021-01-29 21:54:45','2021-01-29 21:54:45','Y',1,1,1,5),
+(6,'2021-01-29 21:54:45','2021-01-29 21:54:45','Y',1,1,1,6),
+(7,'2021-01-29 21:54:45','2021-01-29 21:54:45','Y',1,1,1,7),
+(8,'2021-01-29 21:54:45','2021-01-29 21:54:45','Y',1,1,1,8),
+(9,'2021-01-29 21:54:45','2021-01-29 21:54:45','Y',1,1,1,9),
+(10,'2022-07-15 20:42:00','2022-07-15 20:42:00','Y',1,1,2,1),
+(11,'2022-07-15 20:42:00','2022-07-15 20:42:00','Y',1,1,2,6);
+
+/*Table structure for table `USER_MENU` */
+
+DROP TABLE IF EXISTS `USER_MENU`;
+
+CREATE TABLE `USER_MENU` (
+  `ID` bigint NOT NULL AUTO_INCREMENT,
+  `ACTION` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ACTIVE` char(1) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `DESCRIPTION` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ICON` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ICON_ACTIVE` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `IS_MULTILEVEL` char(1) COLLATE utf8mb4_general_ci NOT NULL,
+  `NAME` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `NAV_TYPE` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `PARENT_ID` bigint DEFAULT NULL,
+  `PATH` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `SORT_ORDER` int DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `FKfy8v03h6ro5knukn0wqiuvl68` (`PARENT_ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `USER_MENU` */
+
+insert  into `USER_MENU`(`ID`,`ACTION`,`ACTIVE`,`DESCRIPTION`,`ICON`,`ICON_ACTIVE`,`IS_MULTILEVEL`,`NAME`,`NAV_TYPE`,`PARENT_ID`,`PATH`,`SORT_ORDER`) values 
+(1,'DASHBOARD','Y','Dashboard','home','home-fill','N','Dashboard','side',NULL,'dashboard',1),
+(2,'GROUP_PERMISSION','Y','Group Permissions','certificate','certificate-fill','N','Group Permissions','side',NULL,'user-group',2),
+(3,'VIEW_GROUP_PERMISSION','Y','View Group Permissions',NULL,NULL,'N','View Group Permissions',NULL,2,NULL,0),
+(4,'CREATE_GROUP_PERMISSION','Y','Create Group Permissions',NULL,NULL,'N','Create Group Permissions',NULL,2,NULL,0),
+(5,'MANAGE_GROUP_PERMISSION','Y','Manage Group Permissions',NULL,NULL,'N','manage Group Permissions',NULL,2,NULL,0),
+(6,'USER','Y','User','users','users-fill','N','Users','side',NULL,'user',3),
+(7,'VIEW_USER','Y','View User',NULL,NULL,'N','View User',NULL,3,NULL,0),
+(8,'CREATE_USER','Y','Create User',NULL,NULL,'N','Create User',NULL,3,NULL,0),
+(9,'MANAGE_USER','Y','Manage User',NULL,NULL,'N','Manage User',NULL,3,NULL,0);
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

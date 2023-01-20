@@ -1,0 +1,12 @@
+minio:
+  url: 10.13.194.221
+  port: 9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  secure: false
+#minio:
+#  url: 127.0.0.1
+#  port: 9000
+#  accessKey: minioadmin
+#  secretKey: minioadmin
+#  secure: false

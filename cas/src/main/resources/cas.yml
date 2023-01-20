@@ -1,0 +1,19 @@
+cas:
+  aesSecretKey: 'WCUDHe3ZHl6EQmcB9CdrOnlhtpOox123'
+  jwtHeader: Authorization
+  authBearerPrefix: Bearer
+  jwtExpiresInAuthenticatedPhase: 720  #in minutes
+  jwtExpiresInTotpPhase: 720 #in minutes
+  jwtExpiresInQrScanPhase: 720 #in minutes
+  rsaKey: '{"p":"_9x-_B6quGtVqeHo6yRVL04GyZMJF_8PGvOkYC0cn3SBsmBDnZftQ6k7UiLi71WXVYDcjxwA-TIXZ6V6RAkmNgITWAx-OwUY6fcz3Yp55nRha83-jC-tiXb-71-6nCVfVvjWhim3k81HDsVkb9ckmBaMwoY3cOc9-2EKIHZyffs","kty":"RSA","q":"4k4l_GLEygm10UebHFRkBnb9I5H1xzWpJ_go9lI9iMLMRlANmoIAts9J4-n_hIxp_bKlBrJqCRR6xBDuEfxEkCZmcmsNfFk9WaPybvkSsEOHBB--V9YvSBUsoW2AtQwEiuJbu6cC9EiuMcKqrm7MJxuo7_Igzs0VoySRZV-WbwU","d":"thDSVrcOQnfifBO8wXZRCozTHHeh2ldbJkHFjiLamxsjEI10Ph_7Qei3eRWEZYnXEtHA0liTyia7nXiO_uCRWvqRzF9N_2CHc2WNauszzOoiCtwBI7-yMRoMDW9ZVI49oRShrPNNza-aEW7qlcnXaVTQf48c85x2K6GV2VeN5vbnd_3eJO0nNVuWkx6vZNGAyvAjkcgte9Rn9RX25MJ9aljQFQQhBK6jnquigDPE6piC5hhZwU8emMtHyx-UT9HtJvI6kWwgCmUGxGSKNLntdGMpSJYdkzioiRI4cNLcoU7JLfMmfycGC-hQtHRnwnLxg-MJlHeCG0QUtmdrv2BKUQ","e":"AQAB","use":"sig","kid":"bankxp","qi":"Pp_3O38hBSD_m3ewKYChLj3c2wfNdlSnmjqx58_ZGYsCe4fUDVxwEdIGXZsuz5isRpLNs84ufoxiCxz0MsEWgvhd_ULMB8nurOszqJICiuVNHmRV_V48U9uPZqqUQU2yH6mGniMNIKSRQ6eZnNE_FIDhovpYNZSbRdZFa9CZFxM","dp":"dQROG1aXM7L7Qa_tS6WZRAJGfmg9z3i6WtQ1SDs5jP_G1WLLacbzH2_FjqIf8d_OT6-Yr-bZ1x5-r8txqK4aiLbYS_uiu7FwHIkPcnIDoE93wss6cLjZgDYpECdS_FjnSqqRylhH-lP2_J1weuoFdX1SsSCbOIq5wT83V3N0l4M","alg":"RS256","dq":"phnB27sKwVfbMV4jROnT-MLBDaiGAs8p9wI33oOCUqzXjgwXz_33VDZU_4myV7FP4juK0J2HIl77tIjQlDbahAsLSpO0dD5zvyWMPVNnGiSWJrq91G6KiZexCFL9EuVdOCroNZVhn7bw0-kTqa_8-_9bQbIvzlnMtc-TQBqmqZk","n":"4i7DQGIClss8eWz3g3mSldJub0HD-Mj3v55hxaIw4tMBqHqfSIyUgI7U7SWsh1za0lwBdM_Dww_qb38sJbGZx7860cdGCaPZ23lA-uhcb16TBcjfiL5pEyZj-5dAyIMSmh0cOKo_HAbA9-GfQn5yts__Awkxij3BKuMYP6etTXhjiNeQ1gtIRpHGVYk0ZUS5QEnYwMaxflDDAEo1MSSTBMKEKiGOVAZNOcBy83oibU3q8s5iK_uIK9nx-hcUV3VMqP3ygoalvvgn_cXUccn0_5hgJXufXQ6nm-z-DQ-XcQ4PPgw0TBKTR9h8-Izh13eLmyq6OOpT9qAUFgja6u5K5w"}'
+  resourceExpiresIn: 7200
+  hashId:
+    salt: '0#jwL0#jwL3BNr_Do3BNr_Do'
+    minHashLength: 25
+  totp:
+    force: false
+    code:
+      length: 6
+    time:
+      period: 30
+      discrepancy: 5

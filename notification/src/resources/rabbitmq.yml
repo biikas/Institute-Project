@@ -1,0 +1,12 @@
+spring:
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 15672
+    username: guest
+    exchange: billpay
+    emailQueue: email
+    emailRoutingkey: c7ac02c6-d31c-486e-94cd-dc9d623699b7
+    enabled: N
+
+

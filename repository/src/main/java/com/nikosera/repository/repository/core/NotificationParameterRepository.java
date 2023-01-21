@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface NotificationParameterRepository extends JpaRepository<NotificationParameter, Long> {
 
-    @Query(value = "SELECT * from NOTIFICATION_PARAMETER n WHERE n.NOTIFICATION_ID= :notificationId",nativeQuery = true)
+    @Query(value = "SELECT n from NOTIFICATION_PARAMETER n WHERE n.NOTIFICATION_ID= :notificationId",nativeQuery = true)
     List<NotificationParameter> fetchByNotificationId(@Param("notificationId") Long notificationId);
 }
 

@@ -1,4 +1,4 @@
-package com.nikosera.clientweb.controller;
+package com.nikosera.clientweb.remoablecontroller;
 
 import com.nikosera.cas.auth.request.AuthResponse;
 import com.nikosera.cas.auth.request.LoginRequest;

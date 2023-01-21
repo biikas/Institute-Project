@@ -5,7 +5,6 @@ import com.nikosera.common.constant.VendorConstant;
 import com.nikosera.common.dto.GenericResponse;
 import com.nikosera.entity.TransactionRequest;
 import com.nikosera.entity.TransactionResponse;
-import com.nikosera.gateway.dto.KhaltiPaymentResponse;
 import com.nikosera.gateway.dto.PaymentRequestDto;
 import com.nikosera.gateway.service.KhaltiService;
 import com.nikosera.gateway.service.TransactionService;
@@ -65,7 +64,7 @@ public class TransactionServiceImpl implements TransactionService {
         transactionRequest.setRecordedDate(new Date());
         transactionRequest.setStatus(statusRepository.getByCode(StatusConstant.INITIATED));
 
-        transactionRequest.setVendor(vendorRepository.getActiveByCode(VendorConstant.KHALTI));
+        transactionRequest.setVendor(vendorRepository.getAllByActive(VendorConstant.KHALTI));
 
         transactionRequest.setAmount(requestDto.getAmount());
         transactionRequest.setOrderId(requestDto.getOrderId());
@@ -80,7 +79,7 @@ public class TransactionServiceImpl implements TransactionService {
         TransactionResponse transactionResponse = new TransactionResponse();
 
         transactionResponse.setRecordedDate(new Date());
-        transactionResponse.setVendor(vendorRepository.getActiveByCode(VendorConstant.KHALTI));
+        transactionResponse.setVendor(vendorRepository.getAllByActive(VendorConstant.KHALTI));
         transactionResponse.setTransactionRequest(transactionRequest);
         transactionRequest.setStatus(transactionRequest.getStatus());
         if (genericResponse.getStatusCode().equalsIgnoreCase("0")) {

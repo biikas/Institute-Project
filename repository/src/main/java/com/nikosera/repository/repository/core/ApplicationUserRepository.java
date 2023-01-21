@@ -21,8 +21,8 @@ public interface ApplicationUserRepository extends JpaRepository<ApplicationUser
 
     Optional<ApplicationUser> findBySecret(String secret);
 
-    @Query(value = "SELECT * FROM `APPLICATION_USER` WHERE USER_GROUP_ID IN (SELECT id FROM `USER_GROUP` WHERE PARENT_ID IN :parentIds)", nativeQuery = true)
-    List<ApplicationUser> findByUserGroupByParent(List<String> parentIds);
+//    @Query(value = "SELECT * FROM `APPLICATION_USER` WHERE USER_GROUP_ID IN (SELECT id FROM `USER_GROUP` WHERE PARENT_ID IN :parentIds)", nativeQuery = true)
+//    List<ApplicationUser> findByUserGroupByParent(List<String> parentIds);
 
     Optional<ApplicationUser> findByEmail(String email);
 

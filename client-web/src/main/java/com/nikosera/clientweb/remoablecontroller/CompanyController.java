@@ -1,4 +1,4 @@
-package com.nikosera.clientweb.controller;
+package com.nikosera.clientweb.remoablecontroller;
 
 import com.nikosera.common.dto.GenericResponse;
 import com.nikosera.company.service.CompanyService;

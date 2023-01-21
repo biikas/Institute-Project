@@ -22,9 +22,9 @@ spring:
     default-property-inclusion: NON_NULL
 
   datasource:
-    url: jdbc:mysql://10.13.194.238:3307/CG?zeroDateTimeBehavior=Converttonull&useUnicode=yes&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost/callgram
     username: root
-    password: f1s0ft@123
+    password: root
     tomcat:
       initial-size: 15
       max-wait: 20000

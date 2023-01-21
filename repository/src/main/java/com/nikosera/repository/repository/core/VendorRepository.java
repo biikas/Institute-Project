@@ -15,6 +15,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VendorRepository extends JpaRepository<Vendor, Long> {
 
-    @Query(value = "SELECT * from VENDOR v WHERE v.CODE=:code AND v.active = 'Y'")
-    Vendor getActiveByCode(@Param("code") String code);
+    @Query(value = "SELECT V from VENDOR V WHERE V.code=:code AND V.active = 'Y'")
+    Vendor getAllByActive(@Param("code") String code);
+
+
 }

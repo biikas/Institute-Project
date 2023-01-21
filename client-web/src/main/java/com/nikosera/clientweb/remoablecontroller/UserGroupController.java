@@ -1,9 +1,8 @@
-package com.nikosera.clientweb.controller;
+package com.nikosera.clientweb.remoablecontroller;
 
 import com.nikosera.common.annotation.IsValidHash;
 import com.nikosera.common.annotation.Unhash;
 import com.nikosera.common.constant.ApiConstant;
-import com.nikosera.common.constant.AuthorizationGrant;
 import com.nikosera.common.dto.GenericResponse;
 import com.nikosera.user.request.AddUserGroupRequest;
 import com.nikosera.user.request.UpdateGroupRequest;

@@ -19,17 +19,14 @@ import java.util.List;
 @Transactional
 public interface NotificationRepository extends JpaRepository<Notification, Long> {
 
-    @Query(value = "SELECT * FROM NOTIFICATION WHERE IS_PUBLISHED = 'N'", nativeQuery = true)
-    List<Notification> fetchNotificationToPublish();
 
-    @Modifying
-    @Query(value = "Update NOTIFICATION n SET n.is_published=:isPublished WHERE n.ID=:id",nativeQuery =true )
-    void updateNotification(@Param("id") Long id,@Param("isPublished") Character isPublished);
 
-    @Query(value = "SELECT * from NOTIFICATION n WHERE n.STATUS=:status AND n.type=:type",nativeQuery =true )
+
+
+    @Query(value = "SELECT n from NOTIFICATION n WHERE n.STATUS=:status AND n.type=:type",nativeQuery =true )
     List<Notification> fetchNotificationToSend(@Param("status") String status,@Param("type") String type);
-
-    @Query(value = "SELECT * from notification n WHERE n.id=:id",nativeQuery =true )
-    Notification fetchNotificationById(@Param("id") Long id);
+//
+//    @Query(value = "SELECT * from notification n WHERE n.id=:id",nativeQuery =true )
+//    Notification fetchNotificationById(@Param("id") Long id);
 }
 

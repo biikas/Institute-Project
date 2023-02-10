@@ -1,0 +1,46 @@
+<configuration>
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener"/>
+
+    <property resource="campaign-logback.properties"/>
+    <include resource="springframework-logback.xml"/>
+    <include resource="console-logback.xml"/>
+
+    <appender name="campaign"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_ROOT}/campaign.log</file>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="${MASKER_CLASS_PATH}">
+                <maskPattern>\"password\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"txnPassword\"\s*:\s*\"([0-9]+)\"</maskPattern>
+                <maskPattern>\"bookingId\"\s*:\s*\"(.*?)\"</maskPattern>
+
+                <maskPattern>password=([a-zA-Z0-9]+)</maskPattern>
+                <maskPattern>txnPassword=([0-9]+)</maskPattern>
+                <maskPattern>bookingId=([a-zA-Z0-9==+]+)</maskPattern>
+                <pattern>${LOG_PATTERN}</pattern>
+            </layout>
+        </encoder>
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            <fileNamePattern>${APP_LOG_ROOT}/archived/campaign/campaign-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <root level="debug" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="campaign"/>
+    </root>
+
+
+    <logger name="com.f1soft" level="debug" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="campaign"/>
+    </logger>
+</configuration>

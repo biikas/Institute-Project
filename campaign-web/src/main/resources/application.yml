@@ -1,0 +1,12 @@
+app:
+  name: Campaign web
+spring:
+  profiles.active: test
+  main.allow-bean-definition-overriding: true
+
+server:
+  port: 10102
+  servlet:
+    context-path: /
+
+allowed.origins: '*'

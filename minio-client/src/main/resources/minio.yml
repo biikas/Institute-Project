@@ -1,0 +1,5 @@
+minio:
+  serverIp: https://uat-presigned.f1soft.com.np
+  accessKey: bankxp
+  secretKey: 28jsbxwdxGlrwomx
+  encodedAesSecretKey: e1Sg0Z0PoS3UWD66GvKZLD0f/Mj7quckz4yavAjG078

@@ -1,0 +1,21 @@
+<included>
+    <include resource="org/springframework/boot/logging/logback/default.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <property resource="campaign-logback.properties"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="${MASKER_CLASS_PATH}">
+                <maskPattern>\"password\"\s*:\s*\"(.*?)\"</maskPattern>
+                <maskPattern>\"txnPassword\"\s*:\s*\"([0-9]+)\"</maskPattern>
+                <maskPattern>\"bookingId\"\s*:\s*\"(.*?)\"</maskPattern>
+
+                <maskPattern>password=([a-zA-Z0-9]+)</maskPattern>
+                <maskPattern>txnPassword=([0-9]+)</maskPattern>
+                <maskPattern>bookingId=([a-zA-Z0-9==+]+)</maskPattern>
+                <pattern>${LOG_PATTERN}</pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+</included>

@@ -1,0 +1,25 @@
+redis:
+  enabled: true
+  host: 10.13.194.205
+ # host: localhost
+  #  port: 6379
+  #  database: 0
+  #password: cardserver
+  #host: 10.13.194.221
+  port: 13379
+  database: 0
+  password: bankxp
+  connectionTimeout: 1000
+  readTimeout: 3000
+  pool:
+    maxIdle: 5000
+    minIdle: 1000
+    maxTotal: 5000
+    maxWaitMillis: 10000
+    testOnBorrow: true
+    testOnReturn: true
+    testWhileIdle: true
+    blockedWhenExhausted: true
+    numTestsPerEvictionRun: -1
+    minEvictableIdleTimeMillis: 60000
+    timeBetweenEvictionRunsMillis: 30000

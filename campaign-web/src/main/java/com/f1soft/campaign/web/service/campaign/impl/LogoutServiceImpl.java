@@ -1,9 +1,9 @@
-package com.f1soft.campaign.web.service.impl;
+package com.f1soft.campaign.web.service.campaign.impl;
 
 import com.f1soft.campaign.common.constant.MsgConstant;
 import com.f1soft.campaign.common.dto.ServerResponse;
 import com.f1soft.campaign.common.util.ResponseMsg;
-import com.f1soft.campaign.web.service.LogoutService;
+import com.f1soft.campaign.web.service.campaign.LogoutService;
 import com.f1soft.campaign.web.token.TokenDTO;
 import com.f1soft.campaign.web.token.TokenRepository;
 import lombok.extern.slf4j.Slf4j;

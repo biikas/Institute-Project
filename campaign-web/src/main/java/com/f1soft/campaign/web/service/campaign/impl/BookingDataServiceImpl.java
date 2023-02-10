@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.service.impl;
+package com.f1soft.campaign.web.service.campaign.impl;
 
 import com.f1soft.campaign.common.constant.MsgConstant;
 import com.f1soft.campaign.common.dto.ServerResponse;
@@ -10,7 +10,7 @@ import com.f1soft.campaign.repository.CampaignRepository;
 import com.f1soft.campaign.web.dto.BookingLogDTO;
 import com.f1soft.campaign.web.dto.response.BookingLogResponse;
 import com.f1soft.campaign.web.mapper.CampaignMapper;
-import com.f1soft.campaign.web.service.BookingDataService;
+import com.f1soft.campaign.web.service.campaign.BookingDataService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

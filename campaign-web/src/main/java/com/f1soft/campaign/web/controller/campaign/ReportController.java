@@ -4,7 +4,7 @@ import com.f1soft.campaign.common.dto.ServerResponse;
 import com.f1soft.campaign.common.log.SkipAPILogging;
 import com.f1soft.campaign.common.util.ResponseBuilder;
 import com.f1soft.campaign.repository.Util.SearchQueryParameter;
-import com.f1soft.campaign.web.service.ReportService;
+import com.f1soft.campaign.web.service.campaign.ReportService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

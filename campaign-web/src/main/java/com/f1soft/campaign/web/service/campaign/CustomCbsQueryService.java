@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.service;
+package com.f1soft.campaign.web.service.campaign;
 
 import com.f1soft.campaign.common.dto.ServerResponse;
 import com.f1soft.campaign.repository.Util.SearchQueryParameter;

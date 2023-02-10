@@ -4,7 +4,7 @@ import com.f1soft.campaign.common.dto.ServerResponse;
 import com.f1soft.campaign.common.util.ResponseBuilder;
 import com.f1soft.campaign.web.dto.request.ManualRedeemRequest;
 import com.f1soft.campaign.web.dto.request.RedeemRequest;
-import com.f1soft.campaign.web.service.RefundService;
+import com.f1soft.campaign.web.service.campaign.RefundService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

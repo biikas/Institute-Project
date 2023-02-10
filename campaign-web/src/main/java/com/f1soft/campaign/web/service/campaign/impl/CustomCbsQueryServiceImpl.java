@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.service.impl;
+package com.f1soft.campaign.web.service.campaign.impl;
 
 import com.f1soft.campaign.common.constant.MsgConstant;
 import com.f1soft.campaign.common.dto.PageResponse;
@@ -14,7 +14,7 @@ import com.f1soft.campaign.web.dto.request.CustomCbsQueryRequest;
 import com.f1soft.campaign.web.dto.request.StatusRequest;
 import com.f1soft.campaign.web.manager.CustomCbsQueryManager;
 import com.f1soft.campaign.web.mapper.CustomCbsQueryMapper;
-import com.f1soft.campaign.web.service.CustomCbsQueryService;
+import com.f1soft.campaign.web.service.campaign.CustomCbsQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -8,7 +8,7 @@ import com.f1soft.campaign.web.giftcard.dto.request.GiftCardCreateRequest;
 import com.f1soft.campaign.web.giftcard.dto.request.GiftCardModifyRequest;
 import com.f1soft.campaign.web.giftcard.dto.request.GiftCardProviderCreateRequest;
 import com.f1soft.campaign.web.giftcard.dto.request.UpdateGiftCardStatusRequest;
-import com.f1soft.campaign.web.service.GiftCardService;
+import com.f1soft.campaign.web.service.campaign.GiftCardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

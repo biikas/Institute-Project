@@ -5,7 +5,7 @@ import com.f1soft.campaign.common.util.ResponseBuilder;
 import com.f1soft.campaign.repository.Util.SearchQueryParameter;
 import com.f1soft.campaign.web.dto.request.CustomCBSConnectionRequest;
 import com.f1soft.campaign.web.dto.request.StatusRequest;
-import com.f1soft.campaign.web.service.CustomCbsConnectionService;
+import com.f1soft.campaign.web.service.campaign.CustomCbsConnectionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.service.impl;
+package com.f1soft.campaign.web.service.campaign.impl;
 
 import com.f1soft.campaign.common.constant.MsgConstant;
 import com.f1soft.campaign.common.dto.PageResponse;
@@ -14,9 +14,8 @@ import com.f1soft.campaign.repository.Util.SearchQueryParameter;
 import com.f1soft.campaign.web.campaign.helper.CampaignHelper;
 import com.f1soft.campaign.web.dto.OfferTransactionListResponse;
 import com.f1soft.campaign.web.dto.OfferTransactionResponse;
-import com.f1soft.campaign.web.dto.TransactionDetailResponse;
 import com.f1soft.campaign.web.mapper.OfferTransactionMapper;
-import com.f1soft.campaign.web.service.TransactionDataService;
+import com.f1soft.campaign.web.service.campaign.TransactionDataService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

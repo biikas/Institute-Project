@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.service.impl;
+package com.f1soft.campaign.web.service.campaign.impl;
 
 import com.f1soft.campaign.common.cbs.dto.CustomerProfileDTO;
 import com.f1soft.campaign.common.config.application.SystemConfig;
@@ -24,7 +24,7 @@ import com.f1soft.campaign.web.dto.*;
 import com.f1soft.campaign.web.dto.response.CampaignModeResponse;
 import com.f1soft.campaign.web.dto.response.ProfileResponse;
 import com.f1soft.campaign.web.mapper.CampaignMapper;
-import com.f1soft.campaign.web.service.CampaignService;
+import com.f1soft.campaign.web.service.campaign.CampaignService;
 import com.f1soft.campaign.web.users.dto.response.UserResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

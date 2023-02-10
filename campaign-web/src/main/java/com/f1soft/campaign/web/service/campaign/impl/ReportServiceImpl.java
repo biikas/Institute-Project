@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.service.impl;
+package com.f1soft.campaign.web.service.campaign.impl;
 
 import com.f1soft.campaign.common.constant.MsgConstant;
 import com.f1soft.campaign.common.dto.PageResponse;
@@ -10,7 +10,7 @@ import com.f1soft.campaign.repository.Util.SearchQueryParameter;
 import com.f1soft.campaign.repository.nativequery.CustomerRegistrationNative;
 import com.f1soft.campaign.web.campaign.helper.ReportHelper;
 import com.f1soft.campaign.web.mapper.RegistrationLogMapper;
-import com.f1soft.campaign.web.service.ReportService;
+import com.f1soft.campaign.web.service.campaign.ReportService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

@@ -1,7 +1,7 @@
 package com.f1soft.campaign.web.controller.bli;
 
-import com.f1soft.campaign.web.campaign.dto.request.campaign.CreateCampaignRequest;
-import com.f1soft.campaign.web.service.CampaignService;
+import com.f1soft.campaign.web.campaign.dto.request.bli.TeacherCreateRequest;
+import com.f1soft.campaign.web.service.campaign.CampaignService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -33,8 +33,8 @@ public class TeacherController {
 //    }
 
     @PostMapping(value = "create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> createTeacher(@NotNull @Valid @RequestBody CreateCampaignRequest createCampaignRequest) {
-//        ServerResponse serverResponse = campaignCrudService.createCampaign(createCampaignRequest);
+    public ResponseEntity<?> createTeacher(@NotNull @Valid @RequestBody TeacherCreateRequest teacherCreateRequest) {
+//        ServerResponse serverResponse = campaignCrudService.createCampaign(teacherCreateRequest);
 //        return ResponseBuilder.response(serverResponse);
         return null;
     }

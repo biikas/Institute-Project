@@ -134,4 +134,8 @@ public class MsgConstant {
         String FILE_NAME_REQUIRED = "FILE_NAME_REQUIRED";
         String EMPTY_FILE = "EMPTY_FILE";
     }
+
+    public interface BLI {
+        String TEACHER_ALREADY_EXIST = "TEACHER_ALREADY_EXISTS";
+    }
 }

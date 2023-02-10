@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.service.impl;
+package com.f1soft.campaign.web.service.campaign.impl;
 
 import com.f1soft.campaign.common.constant.MsgConstant;
 import com.f1soft.campaign.common.dto.ServerResponse;
@@ -10,7 +10,7 @@ import com.f1soft.campaign.repository.EventTypeRepository;
 import com.f1soft.campaign.web.dto.EventTypeListResponse;
 import com.f1soft.campaign.web.dto.response.CustomCbsQueryResponse;
 import com.f1soft.campaign.web.mapper.EventTypeMapper;
-import com.f1soft.campaign.web.service.EventTypeService;
+import com.f1soft.campaign.web.service.campaign.EventTypeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

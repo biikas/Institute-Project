@@ -3,7 +3,7 @@ package com.f1soft.campaign.web.controller.campaign;
 import com.f1soft.campaign.common.dto.ServerResponse;
 import com.f1soft.campaign.common.util.ResponseBuilder;
 import com.f1soft.campaign.web.mapper.TokenMapper;
-import com.f1soft.campaign.web.service.LogoutService;
+import com.f1soft.campaign.web.service.campaign.LogoutService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

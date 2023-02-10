@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.service.impl;
+package com.f1soft.campaign.web.service.campaign.impl;
 
 import com.f1soft.campaign.common.config.application.SystemConfig;
 import com.f1soft.campaign.common.config.constant.AdminConfigConstant;
@@ -22,7 +22,7 @@ import com.f1soft.campaign.web.dto.RefundDTO;
 import com.f1soft.campaign.web.dto.request.ManualRedeemRequest;
 import com.f1soft.campaign.web.dto.request.RedeemRequest;
 import com.f1soft.campaign.web.dto.response.RedeemResponse;
-import com.f1soft.campaign.web.service.RefundService;
+import com.f1soft.campaign.web.service.campaign.RefundService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

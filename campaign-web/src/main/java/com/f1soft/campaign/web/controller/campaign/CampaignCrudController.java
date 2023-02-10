@@ -8,7 +8,7 @@ import com.f1soft.campaign.web.campaign.dto.request.campaign.CreateCampaignReque
 import com.f1soft.campaign.web.campaign.dto.request.campaign.ModifyCampaignRequest;
 import com.f1soft.campaign.web.campaign.dto.request.campaign.UpdateCampaignStatusRequest;
 import com.f1soft.campaign.web.campaign.service.CampaignCrudService;
-import com.f1soft.campaign.web.service.CampaignService;
+import com.f1soft.campaign.web.service.campaign.CampaignService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

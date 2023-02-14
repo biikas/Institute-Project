@@ -1,6 +1,9 @@
 package com.f1soft.campaign.web.controller.bli;
 
+import com.f1soft.campaign.common.dto.ServerResponse;
+import com.f1soft.campaign.common.util.ResponseBuilder;
 import com.f1soft.campaign.web.campaign.dto.request.bli.TeacherCreateRequest;
+import com.f1soft.campaign.web.service.bli.TeacherService;
 import com.f1soft.campaign.web.service.campaign.CampaignService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +26,7 @@ import javax.validation.constraints.NotNull;
 @RequestMapping("teacher")
 public class TeacherController {
     @Autowired
-    private CampaignService campaignService;
+    private TeacherService teacherService;
 
 //    @SkipAPILogging
 //    @PostMapping(value = "search", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -34,9 +37,8 @@ public class TeacherController {
 
     @PostMapping(value = "create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createTeacher(@NotNull @Valid @RequestBody TeacherCreateRequest teacherCreateRequest) {
-//        ServerResponse serverResponse = campaignCrudService.createCampaign(teacherCreateRequest);
-//        return ResponseBuilder.response(serverResponse);
-        return null;
+        ServerResponse serverResponse = teacherService.createTeacher(teacherCreateRequest);
+        return ResponseBuilder.response(serverResponse);
     }
 
 

@@ -7,4 +7,5 @@ public class MsgParameter {
     public static final String ALPHA_CHARACTER_LENGTH = "{alphaCharacterLength}";
     public static final String CAMPAIGN_NAME = "{campaign}";
     public static final String GIFT_CARD_NAME = "{giftCardName}";
+    public static final String teacherName = "{teacherName}";
 }

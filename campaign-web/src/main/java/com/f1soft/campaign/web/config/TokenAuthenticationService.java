@@ -31,19 +31,16 @@ public class TokenAuthenticationService {
     private TokenHelper tokenHelper;
 
     public Optional<UserDetails> findByToken(final String token) {
-        Optional<TokenDTO> cachedtokenDTO = tokenHelper.getUserToken(token);
-        if (!cachedtokenDTO.isPresent()) {
+        try{
+            String username = tokenUtil.getUsernameFromToken(token);
+            log.debug("Username from token : {}", username);
+            Optional<ApplicationUser> applicationUser = applicationUserRepository.findApplicationUserByUsername(username);
+            if (!applicationUser.isPresent()) {
+                return Optional.empty();
+            }
+            return Optional.ofNullable(new AuthApplicationUser(applicationUser.get(), Arrays.asList(new SimpleGrantedAuthority(applicationUser.get().getAdminTypeName()))));
+        }catch (Exception e){
             throw new UnauthorizedException(MsgConstant.INVALID_LOGIN_TOKEN);
         }
-        String username = tokenUtil.getUsernameFromToken(cachedtokenDTO.get().getToken());
-        log.debug("Username from token : {}", token);
-
-        Optional<ApplicationUser> applicationUser = applicationUserRepository.findApplicationUserByUsername(username);
-        if (!applicationUser.isPresent()) {
-            return Optional.empty();
-        }
-        tokenHelper.updateToken(cachedtokenDTO.get());
-
-        return Optional.ofNullable(new AuthApplicationUser(applicationUser.get(), Arrays.asList(new SimpleGrantedAuthority(applicationUser.get().getAdminTypeName()))));
     }
 }

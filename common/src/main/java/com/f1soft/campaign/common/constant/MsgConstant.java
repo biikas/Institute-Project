@@ -137,5 +137,7 @@ public class MsgConstant {
 
     public interface BLI {
         String TEACHER_ALREADY_EXIST = "TEACHER_ALREADY_EXISTS";
+        String TEACHER_ALREADY_ASSIGNED = "TEACHER_ALREADY_ASSIGNED";
+        String TEACHER_REGISTERED_SUCCESS = "TEACHER_REGISTERED_SUCCESS";
     }
 }

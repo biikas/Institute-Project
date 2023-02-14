@@ -17,11 +17,16 @@ public class TeacherCreateRequest {
     private String permanentAddress;
 
     //private String assignedGroup;
-    private String specializedSubejcts;
+    private String specializedSubjects;
     private String qualification;
     private String jobDescription;
 //    private String amountToPay; //(Calculated after registration)
 //    private String creditAmount; //(Amount if teachers asks money early)
     private String mobileNumber1;
     private String mobileNumber2;
+    private Double commissionValue;
+    private Double monthlySalary;
+    private String assignedGroupId;
+    private String email;
+    private String temporaryAddress;
 }

@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * @author Bikash Shah
@@ -29,6 +30,8 @@ public class Teacher {
     private String lastName;
     @Column(name = "PERMANENT_ADDRESS")
     private String permanentAddress;
+    @Column(name = "TEMPORARY_ADDRESS")
+    private String temporaryAddress;
 
     //private String assignedGroup;
     @Column(name = "SPECIALIZED_SUBJECTS")
@@ -45,4 +48,20 @@ public class Teacher {
     private String mobileNumber1;
     @Column(name = "MOBILE_NUMBER2")
     private String mobileNumber2;
+    @Column(name = "CREATED_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
+    @Column(name = "LAST_MODIFIED_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
+    @JoinColumn(name = "CREATED_BY", referencedColumnName = "ID", nullable = true)
+    @ManyToOne()
+    private ApplicationUser createdBy;
+    @JoinColumn(name = "LAST_MODIFIED_BY", referencedColumnName = "ID", nullable = true)
+    @ManyToOne()
+    private ApplicationUser lastModifiedBy;
+    @Column(name = "COMISSION_VALUE") //Commission Value in percentage
+    private Double commissionValue;
+    @Column(name = "EMAIL")
+    private String email;
 }

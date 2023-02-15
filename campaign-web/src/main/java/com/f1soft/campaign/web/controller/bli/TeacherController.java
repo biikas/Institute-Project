@@ -1,10 +1,12 @@
 package com.f1soft.campaign.web.controller.bli;
 
 import com.f1soft.campaign.common.dto.ServerResponse;
+import com.f1soft.campaign.common.log.SkipAPILogging;
 import com.f1soft.campaign.common.util.ResponseBuilder;
-import com.f1soft.campaign.web.campaign.dto.request.bli.TeacherCreateRequest;
+import com.f1soft.campaign.repository.Util.SearchQueryParameter;
+import com.f1soft.campaign.web.bli.dto.TeacherCreateRequest;
+import com.f1soft.campaign.web.bli.dto.TeacherSearchRequest;
 import com.f1soft.campaign.web.service.bli.TeacherService;
-import com.f1soft.campaign.web.service.campaign.CampaignService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -28,12 +30,12 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-//    @SkipAPILogging
-//    @PostMapping(value = "search", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity<?> getCampaignList(@NotNull @Valid @RequestBody SearchQueryParameter searchQueryParameter) {
-//        ServerResponse serverResponse = campaignService.searchCampaign(searchQueryParameter);
-//        return ResponseBuilder.response(serverResponse);
-//    }
+    @SkipAPILogging
+    @PostMapping(value = "search", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> getCampaignList(@NotNull @Valid @RequestBody TeacherSearchRequest teacherSearchRequest) {
+        ServerResponse serverResponse = teacherService.searchCampaign(teacherSearchRequest);
+        return ResponseBuilder.response(serverResponse);
+    }
 
     @PostMapping(value = "create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createTeacher(@NotNull @Valid @RequestBody TeacherCreateRequest teacherCreateRequest) {

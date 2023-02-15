@@ -64,4 +64,6 @@ public class Teacher {
     private Double commissionValue;
     @Column(name = "EMAIL")
     private String email;
+    @Column(name="ACTIVE")
+    private Character active;
 }

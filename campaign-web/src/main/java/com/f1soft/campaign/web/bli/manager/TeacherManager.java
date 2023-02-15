@@ -10,7 +10,7 @@ import com.f1soft.campaign.entities.model.TutionGroup;
 import com.f1soft.campaign.repository.TeacherRepository;
 import com.f1soft.campaign.repository.TutionGroupRepository;
 import com.f1soft.campaign.web.bli.mapper.TeacherMapper;
-import com.f1soft.campaign.web.campaign.dto.request.bli.TeacherCreateRequest;
+import com.f1soft.campaign.web.bli.dto.TeacherCreateRequest;
 import com.f1soft.campaign.web.constant.MsgParameter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

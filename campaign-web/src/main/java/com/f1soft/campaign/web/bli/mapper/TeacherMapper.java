@@ -1,7 +1,8 @@
 package com.f1soft.campaign.web.bli.mapper;
 
 import com.f1soft.campaign.entities.model.Teacher;
-import com.f1soft.campaign.web.campaign.dto.request.bli.TeacherCreateRequest;
+import com.f1soft.campaign.web.bli.dto.TeacherCreateRequest;
+import com.f1soft.campaign.web.bli.dto.TeacherResponse;
 import com.f1soft.campaign.web.config.provider.LoginProvider;
 
 import java.util.Date;
@@ -36,5 +37,30 @@ public class TeacherMapper {
         teacher.setQualification(teacherCreateRequest.getQualification());
 
         return teacher;
+    }
+
+    public static TeacherResponse convertToTeacherResponse(Teacher teacher) {
+        TeacherResponse teacherResponse = new TeacherResponse();
+        if (teacher.getAmountToPay() != null) {
+            teacherResponse.setMonthlySalary(Double.valueOf(String.valueOf(teacher.getAmountToPay())));
+        }
+        if (teacher.getCommissionValue() != null) {
+            teacherResponse.setCommissionValue(teacher.getCommissionValue());
+        }
+        teacherResponse.setFirstName(teacher.getFirstName());
+        if (teacher.getMiddleName() != null) {
+            teacherResponse.setMiddleName(teacher.getMiddleName());
+        }
+        teacherResponse.setLastName(teacher.getLastName());
+        teacherResponse.setEmail(teacher.getEmail());
+        teacherResponse.setMobileNumber1(teacher.getMobileNumber1());
+        teacherResponse.setMobileNumber2(teacher.getMobileNumber2());
+        teacherResponse.setPermanentAddress(teacher.getPermanentAddress());
+        teacherResponse.setTemporaryAddress(teacher.getTemporaryAddress());
+        teacherResponse.setSpecializedSubjects(teacher.getSpecializedSubejcts());
+        teacherResponse.setJobDescription(teacher.getJobDescription());
+        teacherResponse.setQualification(teacher.getQualification());
+
+        return teacherResponse;
     }
 }

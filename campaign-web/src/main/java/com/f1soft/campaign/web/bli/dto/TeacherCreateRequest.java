@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.campaign.dto.request.bli;
+package com.f1soft.campaign.web.bli.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -35,7 +35,7 @@ public class TeacherManager {
 
         Teacher teacher = TeacherMapper.convertToCreateTeacher(teacherCreateRequest);
         teacherRepository.save(teacher);
-        return ResponseMsg.successResponse(MsgConstant.BLI.TEACHER_REGISTERED_SUCCESS, MessageComposer.getParameters(MsgParameter.CAMPAIGN_NAME, teacher.getFirstName()));
+        return ResponseMsg.successResponse(MsgConstant.BLI.TEACHER_REGISTERED_SUCCESS, MessageComposer.getParameters(MsgParameter.TEACHER, teacher.getFirstName()));
     }
 
     public boolean checkDuplicateTeacher(String firstName, String mobileNumber) {

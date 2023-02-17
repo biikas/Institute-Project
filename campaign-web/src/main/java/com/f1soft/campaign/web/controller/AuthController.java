@@ -1,4 +1,4 @@
-package com.f1soft.campaign.web.controller.campaign;
+package com.f1soft.campaign.web.controller;
 
 import com.f1soft.campaign.common.dto.ServerResponse;
 import com.f1soft.campaign.web.login.dto.LoginRequest;

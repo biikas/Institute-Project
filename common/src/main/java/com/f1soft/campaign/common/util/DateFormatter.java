@@ -9,6 +9,8 @@ import org.joda.time.format.DateTimeFormatter;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Date;
 
 @Slf4j
@@ -133,6 +135,22 @@ public class DateFormatter extends DateFormat {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public static String getDayMonthYear(String date){
+        LocalDate currentDate
+                = LocalDate.parse(date);
+
+        // Get day from date
+        int day = currentDate.getDayOfMonth();
+
+        // Get month from date
+        Month month = currentDate.getMonth();
+
+        // Get year from date
+        int year = currentDate.getYear();
+
+        return day +" "+month+" "+year;
     }
 
 }

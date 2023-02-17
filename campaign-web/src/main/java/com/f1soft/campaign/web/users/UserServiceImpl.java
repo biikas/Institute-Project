@@ -5,7 +5,9 @@ import com.f1soft.campaign.common.dto.PageResponse;
 import com.f1soft.campaign.common.dto.ServerResponse;
 import com.f1soft.campaign.common.exception.DataNotFoundException;
 import com.f1soft.campaign.common.util.ResponseMsg;
+import com.f1soft.campaign.entities.model.AdminType;
 import com.f1soft.campaign.entities.model.ApplicationUser;
+import com.f1soft.campaign.repository.AdminTypeRepository;
 import com.f1soft.campaign.repository.ApplicationUserRepository;
 import com.f1soft.campaign.repository.Util.SearchQueryParameter;
 import com.f1soft.campaign.web.dto.request.StatusRequest;
@@ -43,15 +45,20 @@ public class UserServiceImpl implements UserService {
     private UserManager userManager;
     @Autowired
     private PasswordService passwordService;
+    @Autowired
+    private AdminTypeRepository adminTypeRepository;
+
 
     @Override
     public ServerResponse createUser(CreateUserRequest createUserRequest) {
+         AdminType admin = adminTypeRepository.findById(1l).get();
 
         userManager.checkIfUsernameExist(createUserRequest.getUserName());
         ServerResponse serverResponse = passwordService.valid(createUserRequest.getPassword());
         if (serverResponse.isSuccess()) {
 
             ApplicationUser applicationUser = userMapper.convertToCreateUser(createUserRequest);
+            applicationUser.setAdminType(admin);
             applicationUser.setPassword(BCrypt.hashpw(createUserRequest.getPassword(), BCrypt.gensalt()));
 
             applicationUserRepository.save(applicationUser);

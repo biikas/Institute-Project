@@ -38,7 +38,7 @@ public class UserMapper {
         applicationUser.setActive('Y');
         applicationUser.setCreatedDate(new Date());
         applicationUser.setCreatedBy(LoginProvider.getApplicationUser());
-        applicationUser.setAdminTypeName(Constant.AdminType.ADMIN);
+        applicationUser.setAdminTypeName(Constant.AdminType.SUPER_ADMIN);
         if (createUserRequest.getEmailAddress() != null) {
             applicationUser.setEmailAddress(createUserRequest.getEmailAddress().trim());
         }

@@ -10,5 +10,5 @@ import java.util.List;
 public interface DefaultIsoParamRepository extends BaseRepository<DefaultIsoParam> {
 
     @Query("select t from DefaultIsoParam t WHERE t.active = 'Y' and t.type = :type")
-    public List<DefaultIsoParam> getDefaultIsoParamByType(String type);
+    List<DefaultIsoParam> getDefaultIsoParamByType(String type);
 }

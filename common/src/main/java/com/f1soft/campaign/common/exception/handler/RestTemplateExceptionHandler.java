@@ -27,7 +27,7 @@ public class RestTemplateExceptionHandler {
             log.error("IO Exception : {}", e.getMessage());
             restTemplateResponse.setErrorCode(RestTemplateResponse.READ_TIMEOUT);
             restTemplateResponse.setErrorMessage("System Exception");
-            restTemplateResponse.setDeveloperMessage(((IOException) e).getMessage());
+            restTemplateResponse.setDeveloperMessage(e.getMessage());
             restTemplateResponse.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
         } else if (e instanceof JsonMappingException) {
             log.error("Json mapping Exception : {}", e.getMessage());
@@ -39,7 +39,7 @@ public class RestTemplateExceptionHandler {
             log.error("Json parse exception : {}", e.getMessage());
             restTemplateResponse.setErrorCode(RestTemplateResponse.READ_TIMEOUT);
             restTemplateResponse.setErrorMessage("System Exception");
-            restTemplateResponse.setDeveloperMessage(((JsonParseException) e).getMessage());
+            restTemplateResponse.setDeveloperMessage(e.getMessage());
             restTemplateResponse.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
         } else {
             String message = e.getMessage();

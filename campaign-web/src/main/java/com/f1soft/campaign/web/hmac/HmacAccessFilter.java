@@ -26,9 +26,9 @@ import static java.util.Optional.ofNullable;
 
 public class HmacAccessFilter extends AbstractAuthenticationProcessingFilter {
 
-    private static Logger log = LoggerFactory.getLogger(HmacAccessFilter.class);
+    private static final Logger log = LoggerFactory.getLogger(HmacAccessFilter.class);
 
-    private ClientRepository clientRepository;
+    private final ClientRepository clientRepository;
 
     public HmacAccessFilter(final RequestMatcher requiresAuth, ClientRepository clientRepository) {
         super(requiresAuth);

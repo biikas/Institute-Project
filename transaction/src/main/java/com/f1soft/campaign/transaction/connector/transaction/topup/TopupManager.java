@@ -38,7 +38,7 @@ public class TopupManager {
                 serverResponse.setSuccess(genericResponse.isSuccess());
                 serverResponse.setMessage(genericResponse.getMessage());
                 serverResponse.setCode(genericResponse.getCode());
-                serverResponse.setObj((Object) genericResponse.getData());
+                serverResponse.setObj(genericResponse.getData());
             }
         }catch (Exception e){
             log.error("Exception :", e);

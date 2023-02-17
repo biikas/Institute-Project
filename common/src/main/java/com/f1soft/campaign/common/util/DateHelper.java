@@ -54,11 +54,11 @@ public class DateHelper {
     }
 
     public static Date subtractMonth(Date date, Integer month) {
-        return date.from(ZonedDateTime.now().minusMonths(month).toInstant());
+        return Date.from(ZonedDateTime.now().minusMonths(month).toInstant());
     }
 
     public static Date subtractDays(Date date, Integer days) {
-        return date.from(ZonedDateTime.now().minusDays(days).toInstant());
+        return Date.from(ZonedDateTime.now().minusDays(days).toInstant());
     }
 
     public static long getMinutesDifference(Date startDate, Date endDate) {
@@ -160,10 +160,7 @@ public class DateHelper {
             calendar3.setTime(time3);
             Date x = calendar3.getTime();
             log.info("start: {}, end: {}, current: {}", calendar1.getTime(), calendar2.getTime(), calendar3.getTime());
-            if (x.after(calendar1.getTime()) && x.before(calendar2.getTime())) {
-                return true;
-            }
-            return false;
+            return x.after(calendar1.getTime()) && x.before(calendar2.getTime());
         } catch (ParseException e) {
             e.printStackTrace();
             return false;
@@ -181,10 +178,7 @@ public class DateHelper {
             calendar3.setTime(time3);
             Date x = calendar3.getTime();
             log.info("start: {}, end: {}, current: {}", calendar1.getTime(), calendar2.getTime(), calendar3.getTime());
-            if (x.after(calendar1.getTime()) && x.before(calendar2.getTime())) {
-                return true;
-            }
-            return false;
+            return x.after(calendar1.getTime()) && x.before(calendar2.getTime());
         } catch (ParseException e) {
             e.printStackTrace();
             return false;

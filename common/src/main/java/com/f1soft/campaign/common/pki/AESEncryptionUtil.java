@@ -82,7 +82,7 @@ public class AESEncryptionUtil {
      * @return String
      */
     public static String keyToString(SecretKey secretKey) {
-        byte encoded[] = secretKey.getEncoded();
+        byte[] encoded = secretKey.getEncoded();
         String encodedKey = base64Encode(encoded);
         return encodedKey;
     }

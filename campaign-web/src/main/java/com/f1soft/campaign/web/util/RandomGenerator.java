@@ -16,7 +16,7 @@ public class RandomGenerator {
     private static final String CAPS_ALPHA_NUMERIC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             + "0123456789";
     private static final String NUM = "0123456789";
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     public static int generate(int digit) {
         int highest = sizeTable[digit] + 1;

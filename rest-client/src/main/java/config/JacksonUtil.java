@@ -23,12 +23,12 @@ public class JacksonUtil {
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
-    public static <T> T get(String content, Class clazz) throws JsonParseException, JsonMappingException, IOException, ClassNotFoundException {
+    public static <T> T get(String content, Class clazz) throws IOException, ClassNotFoundException {
         return (T) objectMapper.readValue(content, clazz);
     }
 
-    public static <T> T getList(String content, Class<?> target) throws JsonParseException, JsonMappingException, IOException, ClassNotFoundException {
-        return (T) objectMapper.readValue(content, objectMapper.getTypeFactory().constructCollectionType(List.class, Class.forName(target.getName())));
+    public static <T> T getList(String content, Class<?> target) throws IOException, ClassNotFoundException {
+        return objectMapper.readValue(content, objectMapper.getTypeFactory().constructCollectionType(List.class, Class.forName(target.getName())));
     }
 
     public static Map<?, ?> getMap(Object target) {

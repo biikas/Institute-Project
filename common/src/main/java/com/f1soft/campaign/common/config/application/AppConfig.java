@@ -12,6 +12,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 
 /*
@@ -30,7 +31,7 @@ public class AppConfig {
         ObjectMapper objectMapper = new ObjectMapper();
         restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter(objectMapper));
         restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
-        restTemplate.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
+        restTemplate.getMessageConverters().add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
         restTemplate.setRequestFactory(clientHttpRequestFactory());
         restTemplate.setErrorHandler(new RestTemplateResponseErrorHandler());
         return restTemplate;

@@ -49,10 +49,6 @@ public class TeacherManager {
 
     public Boolean checkIfGroupIsAssigned(String groupId) {
         Optional<TutionGroup> tutionGroup = tutionGroupRepository.findTutionGroupById(Long.parseLong(groupId));
-        if (tutionGroup.isPresent()) {
-            return true;
-        } else {
-            return false;
-        }
+        return tutionGroup.isPresent();
     }
 }

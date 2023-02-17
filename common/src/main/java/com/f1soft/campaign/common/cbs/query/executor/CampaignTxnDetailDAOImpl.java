@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class CampaignTxnDetailDAOImpl implements CampaignTxnDetailDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public CampaignTxnDetailDAOImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;

@@ -17,7 +17,7 @@ public class MethodRequestAspect {
         Object result = point.proceed();
         log.info("#{} #{}: parameters : {}",
                 point.getTarget().getClass().getName(),
-                MethodSignature.class.cast(point.getSignature()).getMethod().getName(), point.getArgs());
+                ((MethodSignature) point.getSignature()).getMethod().getName(), point.getArgs());
         return result;
     }
 }

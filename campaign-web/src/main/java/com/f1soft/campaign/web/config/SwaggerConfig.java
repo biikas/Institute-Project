@@ -34,9 +34,7 @@ public class SwaggerConfig {
             if (declaringClass.isAnnotationPresent(RestController.class)) {
                 return true;
             }
-            if (input.isAnnotatedWith(ResponseBody.class)) {
-                return true;
-            }
+            return input.isAnnotatedWith(ResponseBody.class);
         }
         return false;
     };

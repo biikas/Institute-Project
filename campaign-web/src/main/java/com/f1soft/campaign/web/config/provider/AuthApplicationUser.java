@@ -73,7 +73,7 @@ public class AuthApplicationUser implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return user.getActive() == 'Y' ? true : false;
+        return user.getActive() == 'Y';
     }
 
     @JsonIgnore

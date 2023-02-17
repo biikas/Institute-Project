@@ -23,7 +23,7 @@ import java.io.Serializable;
 @Component
 public class TokenAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
 
-    private static HttpMessageConverter<String> messageConverter = new StringHttpMessageConverter();
+    private static final HttpMessageConverter<String> messageConverter = new StringHttpMessageConverter();
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)

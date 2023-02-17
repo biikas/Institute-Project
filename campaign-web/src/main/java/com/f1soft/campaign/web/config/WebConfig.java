@@ -20,6 +20,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class WebConfig implements WebMvcConfigurer {
 
         converters.add(new ByteArrayHttpMessageConverter());
         // supports text/html in spring restcontroller statements
-        converters.add(new StringHttpMessageConverter(Charset.forName("utf-8")));
+        converters.add(new StringHttpMessageConverter(StandardCharsets.UTF_8));
     }
 
     @Override

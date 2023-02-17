@@ -16,7 +16,7 @@ public class RandomGenerator {
     private static final String CAPS_ALPHA_NUMERIC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             + "0123456789";
     private static final String NUM = "0123456789";
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     public static int generate(int digit) {
         int highest = sizeTable[digit] + 1;
@@ -104,7 +104,7 @@ public class RandomGenerator {
             int ndx = (int) (Math.random() * CAPS_ALPHA_NUMERIC.length());
             sb.append(CAPS_ALPHA_NUMERIC.charAt(ndx));
         }
-        return prefix + sb.toString();
+        return prefix + sb;
     }
 
     public static String generateUUID() {

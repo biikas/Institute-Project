@@ -25,10 +25,10 @@ public class Util {
 
     public static Map<String, String> initializeBucketAndFileName(String fileFullPath, String fileName) {
         String bucketName = fileFullPath;
-        String paths[] = fileFullPath.split("\\/");
+        String[] paths = fileFullPath.split("\\/");
         if (paths.length > 1) {
             bucketName = paths[0];
-            fileName = fileFullPath.substring(fileFullPath.indexOf("/") + 1, fileFullPath.length()) + "/" + fileName;
+            fileName = fileFullPath.substring(fileFullPath.indexOf("/") + 1) + "/" + fileName;
         }
         Map<String, String> map = new HashMap<>();
         map.put("bucketName", bucketName);

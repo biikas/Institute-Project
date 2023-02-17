@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -45,13 +46,8 @@ public class TokenUtil implements Serializable {
     }
 
     private Claims getAllClaimsFromToken(String token) {
-        try {
-            String secret = systemConfig.adminConfig(AdminConfigConstant.JWT_SECRET);
-            return Jwts.parser().setSigningKey(secret.getBytes("UTF-8")).parseClaimsJws(token).getBody();
-        } catch (UnsupportedEncodingException ex) {
-            log.error("Exception : " + ex.getMessage());
-            return null;
-        }
+        String secret = systemConfig.adminConfig(AdminConfigConstant.JWT_SECRET);
+        return Jwts.parser().setSigningKey(secret.getBytes(StandardCharsets.UTF_8)).parseClaimsJws(token).getBody();
     }
 
     private Boolean isTokenExpired(String token) {
@@ -73,16 +69,11 @@ public class TokenUtil implements Serializable {
     }
 
     private String doGenerateToken(Map<String, Object> claims, String subject, String deviceType) {
-        try {
-            final Date createdDate = new Date();
-            final Date expirationDate = calculateExpirationDate(createdDate);
-            String secret = systemConfig.adminConfig(AdminConfigConstant.JWT_SECRET);
-            return Jwts.builder().setClaims(claims).setSubject(subject).setAudience(deviceType).setIssuedAt(createdDate)
-                    .signWith(SignatureAlgorithm.HS512, secret.getBytes("UTF-8")).compact();
-        } catch (UnsupportedEncodingException ex) {
-            log.error("Exception : " + ex.getMessage());
-            return null;
-        }
+        final Date createdDate = new Date();
+        final Date expirationDate = calculateExpirationDate(createdDate);
+        String secret = systemConfig.adminConfig(AdminConfigConstant.JWT_SECRET);
+        return Jwts.builder().setClaims(claims).setSubject(subject).setAudience(deviceType).setIssuedAt(createdDate)
+                .signWith(SignatureAlgorithm.HS512, secret.getBytes(StandardCharsets.UTF_8)).compact();
     }
 
     public Boolean canTokenBeRefreshed(String token, Date lastPasswordReset) {
@@ -91,20 +82,15 @@ public class TokenUtil implements Serializable {
     }
 
     public String refreshToken(String token) {
-        try {
-            final Date createdDate = new Date();
-            final Date expirationDate = calculateExpirationDate(createdDate);
+        final Date createdDate = new Date();
+        final Date expirationDate = calculateExpirationDate(createdDate);
 
-            final Claims claims = getAllClaimsFromToken(token);
-            claims.setIssuedAt(createdDate);
-            claims.setExpiration(expirationDate);
-            String secret = systemConfig.adminConfig(AdminConfigConstant.JWT_SECRET);
+        final Claims claims = getAllClaimsFromToken(token);
+        claims.setIssuedAt(createdDate);
+        claims.setExpiration(expirationDate);
+        String secret = systemConfig.adminConfig(AdminConfigConstant.JWT_SECRET);
 
-            return Jwts.builder().setClaims(claims).signWith(SignatureAlgorithm.HS512, secret.getBytes("UTF-8")).compact();
-        } catch (UnsupportedEncodingException ex) {
-            log.error("Exception : " + ex.getMessage());
-            return null;
-        }
+        return Jwts.builder().setClaims(claims).signWith(SignatureAlgorithm.HS512, secret.getBytes(StandardCharsets.UTF_8)).compact();
     }
 
     private Date calculateExpirationDate(Date createdDate) {

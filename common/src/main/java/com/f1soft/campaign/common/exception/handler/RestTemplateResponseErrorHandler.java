@@ -13,7 +13,7 @@ import java.net.URI;
 @Slf4j
 public class RestTemplateResponseErrorHandler implements ResponseErrorHandler {
 
-    private ResponseErrorHandler errorHandler = new DefaultResponseErrorHandler();
+    private final ResponseErrorHandler errorHandler = new DefaultResponseErrorHandler();
 
     @Override
     public boolean hasError(ClientHttpResponse response) throws IOException {

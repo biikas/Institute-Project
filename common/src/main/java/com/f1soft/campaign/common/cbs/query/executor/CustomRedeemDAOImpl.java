@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class CustomRedeemDAOImpl implements CustomRedeemDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public CustomRedeemDAOImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;

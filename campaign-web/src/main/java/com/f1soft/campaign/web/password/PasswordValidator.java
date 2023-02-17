@@ -43,10 +43,7 @@ public class PasswordValidator {
             return false;
         }
 
-        if (!validateSpecialChar()) {
-            return false;
-        }
-        return true;
+        return validateSpecialChar();
     }
 
     private boolean validateLength() {
@@ -178,16 +175,10 @@ public class PasswordValidator {
     }
 
     private boolean isAlpha(char data) {
-        if (!Character.isDigit(data)) {
-            return true;
-        }
-        return false;
+        return !Character.isDigit(data);
     }
 
     private boolean isNumeric(char data) {
-        if (Character.isDigit(data)) {
-            return true;
-        }
-        return false;
+        return Character.isDigit(data);
     }
 }

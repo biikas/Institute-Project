@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class CustomerDetailDAOImpl implements CustomerDetailDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public CustomerDetailDAOImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;

@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 /**
@@ -32,7 +33,7 @@ public class SecretKeyUtil {
     public static SecretKey getSecretKey(byte[] secretKey) throws Exception {
         if (secretKey.length % 16 == 0 && secretKey.length <= 32) {
 
-            log.debug("Secret Key In String: {}", new String(secretKey, "UTF-8"));
+            log.debug("Secret Key In String: {}", new String(secretKey, StandardCharsets.UTF_8));
 
             return new SecretKeySpec(secretKey, "AES");
         } else {
@@ -70,7 +71,7 @@ public class SecretKeyUtil {
      * @throws Exception
      */
     public static SecretKey stringToSecretKey(String secretKeyInString) throws Exception {
-        return getSecretKey(secretKeyInString.getBytes("UTF-8"));
+        return getSecretKey(secretKeyInString.getBytes(StandardCharsets.UTF_8));
     }
 
 }

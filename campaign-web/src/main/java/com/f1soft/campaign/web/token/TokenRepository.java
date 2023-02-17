@@ -16,12 +16,12 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class TokenRepository {
 
-    private SystemConfig systemConfig;
+    private final SystemConfig systemConfig;
 
-    private RedisTemplate redisTemplate;
-    private HashOperations hashOperations;
+    private final RedisTemplate redisTemplate;
+    private final HashOperations hashOperations;
 
-    private String keyPrefix = "ADMIN_TOKEN";
+    private final String keyPrefix = "ADMIN_TOKEN";
 
     @Autowired
     public TokenRepository(RedisTemplate redisTemplate, SystemConfig systemConfig) {

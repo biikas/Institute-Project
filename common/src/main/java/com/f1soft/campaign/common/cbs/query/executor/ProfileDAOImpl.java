@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class ProfileDAOImpl implements ProfileDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public ProfileDAOImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;

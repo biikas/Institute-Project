@@ -16,7 +16,7 @@ public class MethodAspect {
     public Object around(ProceedingJoinPoint point) throws Throwable {
         long start = System.currentTimeMillis();
         Object result = point.proceed();
-        log.info("#{}: parameters : {} : parseStatement : {} executed in {} ms", MethodSignature.class.cast(point.getSignature()).getMethod()
+        log.info("#{}: parameters : {} : parseStatement : {} executed in {} ms", ((MethodSignature) point.getSignature()).getMethod()
                 .getName(), point.getArgs(), result, System.currentTimeMillis() - start);
         return result;
     }

@@ -73,7 +73,7 @@ public class RestControllerAspect {
 
             StringBuilder sb = new StringBuilder();
 
-            Annotation[][] parameterAnnotations = MethodSignature.class.cast(joinPoint.getSignature()).getMethod().getParameterAnnotations();
+            Annotation[][] parameterAnnotations = ((MethodSignature) joinPoint.getSignature()).getMethod().getParameterAnnotations();
             assert joinPoint.getArgs().length == parameterAnnotations.length;
 
             for (int argIndex = 0; argIndex < joinPoint.getArgs().length; argIndex++) {
@@ -88,7 +88,7 @@ public class RestControllerAspect {
             log.info("Entering API Class {} # Method : {}: Parameters : {}",
                     className,
                     methodName,
-                    sb.toString()
+                    sb
             );
 
             Object result = joinPoint.proceed();

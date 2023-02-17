@@ -17,7 +17,7 @@ public class MethodResponseAspect {
         Object result = point.proceed();
         log.info("#{} #{}: response : {} : {}",
                 point.getTarget().getClass().getName(),
-                MethodSignature.class.cast(point.getSignature()).getMethod().getName(), result);
+                ((MethodSignature) point.getSignature()).getMethod().getName(), result);
         return result;
     }
 }

@@ -2,12 +2,13 @@ package com.college.campaign.repository;
 
 import com.college.campaign.entities.model.ApplicationUser;
 import com.college.campaign.repository.custom.ApplicationUserCustom;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface ApplicationUserRepository extends BaseRepository<ApplicationUser>, ApplicationUserCustom {
+public interface ApplicationUserRepository extends JpaRepository<ApplicationUser,Long>, ApplicationUserCustom {
 
     @Query("select t from ApplicationUser t where t.active ='Y' and t.username =:username")
     Optional<ApplicationUser> findApplicationUserByUsername(String username);

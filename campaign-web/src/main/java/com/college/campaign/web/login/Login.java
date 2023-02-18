@@ -4,6 +4,7 @@ package com.college.campaign.web.login;
 import com.college.campaign.web.login.dto.LoginResponse;
 import com.college.campaign.web.login.dto.MenuDTO;
 import com.college.campaign.web.manager.ApplicationUserManager;
+import com.college.campaign.web.mapper.MenuMapper;
 import com.college.campaign.web.token.TokenHelper;
 import com.college.campaign.common.constant.MsgConstant;
 import com.college.campaign.common.dto.ServerResponse;

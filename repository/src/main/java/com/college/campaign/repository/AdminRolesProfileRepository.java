@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @Author Nitesh Poudel
  */
-public interface AdminRolesProfileRepository extends JpaRepository<Integer,AdminRolesProfile> {
+public interface AdminRolesProfileRepository extends JpaRepository<AdminRolesProfile,Long> {
 
     @Query("SELECT t FROM AdminRolesProfile t where t.enabled = 'Y' and t.adminType.id = :adminTypeId")
     List<AdminRolesProfile> loadAllActiveRolesByAdminType(@Param("adminTypeId") Long adminTypeId);

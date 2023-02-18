@@ -20,7 +20,7 @@ import java.util.Map;
  * @Author Rashim Dhaubanjar
  */
 @Repository
-public abstract class AbstractQueryDslBuilder extends Qentities {
+public abstract class AbstractQueryDslBuilder  {
 
     protected static final Logger log = LoggerFactory.getLogger(AbstractQueryDslBuilder.class);
 

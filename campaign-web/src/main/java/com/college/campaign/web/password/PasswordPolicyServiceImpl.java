@@ -1,7 +1,6 @@
 package com.college.campaign.web.password;
 
 
-import com.college.campaign.web.dto.response.PasswordPolicyResponse;
 import com.college.campaign.common.config.application.SystemConfig;
 import com.college.campaign.common.constant.MsgConstant;
 import com.college.campaign.common.dto.ServerResponse;
@@ -23,16 +22,16 @@ public class PasswordPolicyServiceImpl implements PasswordPolicyService {
     @Override
     public ServerResponse passwordPolicy() {
 
-        PasswordPolicyResponse policyResponse = new PasswordPolicyResponse();
+//        PasswordPolicyResponse policyResponse = new PasswordPolicyResponse();
 
         String[] policyInfo = systemConfig.adminPasswordConfig(AdminPasswordConfigConstant.POLICY_INFO).split("\\\\n");
         List<String> passwordPolicy = Arrays.asList(policyInfo);
+//
+//        policyResponse.setPasswordPolicy(passwordPolicy);
+//        policyResponse.setMinLength(Integer.valueOf(systemConfig.adminPasswordConfig(AdminPasswordConfigConstant.MIN_LENGTH)));
+//        policyResponse.setMaxLength(Integer.valueOf(systemConfig.adminPasswordConfig(AdminPasswordConfigConstant.MAX_LENGTH)));
 
-        policyResponse.setPasswordPolicy(passwordPolicy);
-        policyResponse.setMinLength(Integer.valueOf(systemConfig.adminPasswordConfig(AdminPasswordConfigConstant.MIN_LENGTH)));
-        policyResponse.setMaxLength(Integer.valueOf(systemConfig.adminPasswordConfig(AdminPasswordConfigConstant.MAX_LENGTH)));
-
-        return ResponseMsg.successResponse(MsgConstant.Data.SUCCESS, policyResponse);
+        return ResponseMsg.successResponse(MsgConstant.Data.SUCCESS);
     }
 
 

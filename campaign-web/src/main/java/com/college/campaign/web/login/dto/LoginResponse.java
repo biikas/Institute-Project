@@ -7,9 +7,6 @@ import lombok.Setter;
 
 import java.util.List;
 
-/*
- * @Author Rashim Dhaubanjar
- */
 @Getter
 @Setter
 public class LoginResponse extends BaseResponse {

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>entities</artifactId>
-    <groupId>com.f1soft.campaign</groupId>
+    <groupId>com.college.campaign</groupId>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>entities</name>

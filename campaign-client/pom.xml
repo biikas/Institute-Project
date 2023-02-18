@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>campaign</artifactId>
-        <groupId>com.f1soft.campaign</groupId>
+        <groupId>com.college.campaign</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.f1soft.campaign</groupId>
+    <groupId>com.college.campaign</groupId>
     <artifactId>campaign-client</artifactId>
     <name>campaign-client</name>
     <description>APIs to consume by our client app</description>
@@ -71,12 +71,12 @@
         </dependency>
 
         <dependency>
-            <groupId>com.f1soft.campaign</groupId>
+            <groupId>com.college.campaign</groupId>
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.f1soft.campaign</groupId>
+            <groupId>com.college.campaign</groupId>
             <artifactId>repository</artifactId>
             <version>${project.version}</version>
         </dependency>

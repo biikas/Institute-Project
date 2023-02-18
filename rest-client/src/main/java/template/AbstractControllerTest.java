@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class AbstractControllerTest {
 
-    //    public static final String BASE_URI = "https://bankxp.f1soft.com.np/gprs/";
+    //    public static final String BASE_URI = "https://bankxp.college.com.np/gprs/";
     public static final String BASE_URI = "http://localhost:10102/";
     //    public static final String BASE_URI = "http://10.13.194.173:7080/";
     public static final String CUSTOMIZATION = "http://localhost:8090/bank-web";

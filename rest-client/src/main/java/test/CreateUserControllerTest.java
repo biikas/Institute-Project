@@ -56,7 +56,7 @@ public class CreateUserControllerTest extends TokenBasedAbstractControllerTest {
                 .add("userName", "admin9")
                 .add("password", "abc1234")
                 .add("name", "Test")
-                .add("emailAddress", "test@f1soft.com")
+                .add("emailAddress", "test@college.com")
                 .build();
 
         HttpEntity<String> request = new HttpEntity<>(jsonObject.toString(), headers);
@@ -71,7 +71,7 @@ public class CreateUserControllerTest extends TokenBasedAbstractControllerTest {
 
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("name", "Shreetika")
-                .add("emailAddress", "shreetika.panta@f1soft.com")
+                .add("emailAddress", "shreetika.panta@college.com")
                 .add("mobileNumber", "9800000000")
                 .build();
 

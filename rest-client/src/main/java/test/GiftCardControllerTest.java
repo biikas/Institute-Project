@@ -11,7 +11,7 @@ import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
 
 /**
- * @author <krishna.pandey@f1soft.com>
+ * @author <krishna.pandey@college.com>
  */
 @Slf4j
 public class GiftCardControllerTest extends TokenBasedAbstractControllerTest {

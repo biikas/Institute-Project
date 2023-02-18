@@ -10,7 +10,7 @@
         <version>2.2.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.f1soft.campaign</groupId>
+    <groupId>com.college.campaign</groupId>
     <artifactId>campaign</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>campaign</name>

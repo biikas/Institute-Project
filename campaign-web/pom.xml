@@ -6,10 +6,10 @@
 
     <parent>
         <artifactId>campaign</artifactId>
-        <groupId>com.f1soft.campaign</groupId>
+        <groupId>com.college.campaign</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.f1soft.campaign</groupId>
+    <groupId>com.college.campaign</groupId>
     <artifactId>campaign-web</artifactId>
     <name>campaign-web</name>
     <description>APIs to consume by our client app</description>
@@ -25,27 +25,27 @@
             <artifactId>tomcat-jdbc</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.f1soft.campaign</groupId>
+            <groupId>com.college.campaign</groupId>
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.f1soft.campaign</groupId>
+            <groupId>com.college.campaign</groupId>
             <artifactId>campaign-client</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.f1soft.campaign</groupId>
+            <groupId>com.college.campaign</groupId>
             <artifactId>repository</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.f1soft.campaign</groupId>
+            <groupId>com.college.campaign</groupId>
             <artifactId>minio-client</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.f1soft.campaign</groupId>
+            <groupId>com.college.campaign</groupId>
             <artifactId>transaction</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

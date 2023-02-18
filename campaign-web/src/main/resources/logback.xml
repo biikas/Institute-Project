@@ -39,7 +39,7 @@
     </root>
 
 
-    <logger name="com.f1soft" level="debug" additivity="false">
+    <logger name="com.college" level="debug" additivity="false">
         <appender-ref ref="console"/>
         <appender-ref ref="campaign"/>
     </logger>
